@@ -22,9 +22,9 @@ export function init(settings = default_settings) {
 		amp: false,
 		dev: false,
 		entry: {
-			file: assets + "/_app/start-0595ddf7.js",
+			file: assets + "/_app/start-08ddeec1.js",
 			css: [assets + "/_app/assets/start-464e9d0a.css"],
-			js: [assets + "/_app/start-0595ddf7.js",assets + "/_app/chunks/vendor-af0f2ef7.js"]
+			js: [assets + "/_app/start-08ddeec1.js",assets + "/_app/chunks/vendor-c23136b9.js"]
 		},
 		fetched: undefined,
 		floc: false,
@@ -70,7 +70,7 @@ const d = s => s
 const empty = () => ({});
 
 const manifest = {
-	assets: [{"file":"favicon.png","size":1571,"type":"image/png"}],
+	assets: [{"file":"VCR-OSD-Mono.ttf","size":75864,"type":"font/ttf"},{"file":"favicon.png","size":1571,"type":"image/png"}],
 	layout: "src/routes/__layout.svelte",
 	error: ".svelte-kit/build/components/error.svelte",
 	routes: [
@@ -79,6 +79,27 @@ const manifest = {
 						pattern: /^\/$/,
 						params: empty,
 						a: ["src/routes/__layout.svelte", "src/routes/index.svelte"],
+						b: [".svelte-kit/build/components/error.svelte"]
+					},
+		{
+						type: 'page',
+						pattern: /^\/downloads\/?$/,
+						params: empty,
+						a: ["src/routes/__layout.svelte", "src/routes/downloads.svelte"],
+						b: [".svelte-kit/build/components/error.svelte"]
+					},
+		{
+						type: 'page',
+						pattern: /^\/resources\/?$/,
+						params: empty,
+						a: ["src/routes/__layout.svelte", "src/routes/resources.svelte"],
+						b: [".svelte-kit/build/components/error.svelte"]
+					},
+		{
+						type: 'page',
+						pattern: /^\/about\/?$/,
+						params: empty,
+						a: ["src/routes/__layout.svelte", "src/routes/about.svelte"],
 						b: [".svelte-kit/build/components/error.svelte"]
 					}
 	]
@@ -94,10 +115,10 @@ const get_hooks = hooks => ({
 });
 
 const module_lookup = {
-	"src/routes/__layout.svelte": () => import("../../src/routes/__layout.svelte"),".svelte-kit/build/components/error.svelte": () => import("./components/error.svelte"),"src/routes/index.svelte": () => import("../../src/routes/index.svelte")
+	"src/routes/__layout.svelte": () => import("../../src/routes/__layout.svelte"),".svelte-kit/build/components/error.svelte": () => import("./components/error.svelte"),"src/routes/index.svelte": () => import("../../src/routes/index.svelte"),"src/routes/downloads.svelte": () => import("../../src/routes/downloads.svelte"),"src/routes/resources.svelte": () => import("../../src/routes/resources.svelte"),"src/routes/about.svelte": () => import("../../src/routes/about.svelte")
 };
 
-const metadata_lookup = {"src/routes/__layout.svelte":{"entry":"pages/__layout.svelte-9743544e.js","css":["assets/pages/__layout.svelte-6832be30.css"],"js":["pages/__layout.svelte-9743544e.js","chunks/vendor-af0f2ef7.js"],"styles":[]},".svelte-kit/build/components/error.svelte":{"entry":"error.svelte-9a576e1f.js","css":[],"js":["error.svelte-9a576e1f.js","chunks/vendor-af0f2ef7.js"],"styles":[]},"src/routes/index.svelte":{"entry":"pages/index.svelte-caee2801.js","css":["assets/pages/index.svelte-47a5098d.css"],"js":["pages/index.svelte-caee2801.js","chunks/vendor-af0f2ef7.js"],"styles":[]}};
+const metadata_lookup = {"src/routes/__layout.svelte":{"entry":"pages/__layout.svelte-8b5a1f7e.js","css":["assets/pages/__layout.svelte-11e2530d.css"],"js":["pages/__layout.svelte-8b5a1f7e.js","chunks/vendor-c23136b9.js"],"styles":[]},".svelte-kit/build/components/error.svelte":{"entry":"error.svelte-61b796f3.js","css":[],"js":["error.svelte-61b796f3.js","chunks/vendor-c23136b9.js"],"styles":[]},"src/routes/index.svelte":{"entry":"pages/index.svelte-933ccce0.js","css":[],"js":["pages/index.svelte-933ccce0.js","chunks/vendor-c23136b9.js"],"styles":[]},"src/routes/downloads.svelte":{"entry":"pages/downloads.svelte-96fe03f3.js","css":[],"js":["pages/downloads.svelte-96fe03f3.js","chunks/vendor-c23136b9.js"],"styles":[]},"src/routes/resources.svelte":{"entry":"pages/resources.svelte-bac0ed22.js","css":[],"js":["pages/resources.svelte-bac0ed22.js","chunks/vendor-c23136b9.js"],"styles":[]},"src/routes/about.svelte":{"entry":"pages/about.svelte-b994b5a2.js","css":["assets/pages/about.svelte-d5bdb6c4.css"],"js":["pages/about.svelte-b994b5a2.js","chunks/vendor-c23136b9.js"],"styles":[]}};
 
 async function load_component(file) {
 	const { entry, css, js, styles } = metadata_lookup[file];

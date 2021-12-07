@@ -3,7 +3,16 @@ const config = {
   purge: ["./src/**/*.{html,js,svelte,ts}"],
 
   theme: {
-    extend: {},
+
+    extend: {
+      colors: {
+        lib: {
+          light: "#7276aa",
+          DEFAULT: "#525788",
+          dark: "#464A74"
+        }
+      },
+    },
   },
 
   plugins: [],
